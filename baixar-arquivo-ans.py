@@ -12,10 +12,10 @@ def baixar_arquivo (url, nome_do_arquivo):
     
     if resposta_http.status_code == requests.codes.OK: #ok = 200
         with open(nome_do_arquivo, 'wb') as novo_arquivo:
-                #modo  de  abertura: 'wb', porque vai ser aberto para escrita dos bytes.
+        #modo  de  abertura: 'wb', porque vai ser aberto para escrita dos bytes.
 
             novo_arquivo.write(resposta_http.content)
-                #posso escrever neste novo_arquivo o que tiver como conteudo na nossa resposta.       
+            #posso escrever neste novo_arquivo o que tiver como conteudo na nossa resposta.       
     else:
         print('Arquivo não encontrado: ' + nome_do_arquivo)
         print('código de resposta http: ' + str(resposta_http.status_code)) #Para poder concatenar com outra string, foi realizada a conversao de um tipo int para string
